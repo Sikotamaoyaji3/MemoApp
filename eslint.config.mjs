@@ -10,7 +10,8 @@ export default [
   rules, {
     "semi": ["error", "always"],
     "quotes": ["warn", "double"],
-    "no-console": ["error"]
+    "no-console": ["error"],
+    "eol-last": ["error", "always"]
   },
   pluginJs.configs.recommended,
   ...tseslint.configs.recommended,
