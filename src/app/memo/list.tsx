@@ -1,21 +1,25 @@
-import { StyleSheet, View } from "react-native";
+import { StyleSheet, View, ScrollView} from "react-native";
+import { Feather } from "@expo/vector-icons";
 
 import Header from "../../components/Header";
 import MemoListItem from "../../components/MemoListItem";
 import CircleButton from "../../components/CircleButton";
+import Icon from "../../components/icon";
 const List = (): JSX.Element => {
   return (
     <View style={styles.container}>
 
       <Header />
 
-      <View>
+      <ScrollView>
         <MemoListItem />
         <MemoListItem />
         <MemoListItem />
-      </View>
+      </ScrollView>
 
-      <CircleButton>+</CircleButton>
+      <CircleButton>
+        <Feather color='red' />
+      </CircleButton>
 
     </View>
   )

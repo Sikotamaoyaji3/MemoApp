@@ -2,7 +2,7 @@ import { View, Text, StyleSheet, ViewStyle } from 'react-native'
 
 
 interface Props {
-    children: string
+    children: JSX.Element
     style?: ViewStyle
 }
 const CircleButton = (props: Props): JSX.Element => {
