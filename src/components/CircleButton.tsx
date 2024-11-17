@@ -1,15 +1,18 @@
+import { Feather } from '@expo/vector-icons'
 import { View, Text, StyleSheet, ViewStyle } from 'react-native'
 
 
 interface Props {
     children: JSX.Element
     style?: ViewStyle
+    size?: string
+    name?: string
 }
 const CircleButton = (props: Props): JSX.Element => {
-    const {children, style } = props
+    const { children,style, } = props
     return(
         <View style={[styles.circleButton, style]}>
-            <Text style={styles.circleButtonLabel}>{children}</Text>
+            <Feather  name='plus' style={[styles.circleButtonLabel, style]} />
         </View>
     )
 }

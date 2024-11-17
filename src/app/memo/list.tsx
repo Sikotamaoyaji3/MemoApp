@@ -18,8 +18,9 @@ const List = (): JSX.Element => {
       </ScrollView>
 
       <CircleButton>
-        <Feather color='red' />
+        <Feather name="plus" size={40}/>
       </CircleButton>
+
 
     </View>
   )
@@ -30,6 +31,11 @@ const styles = StyleSheet.create({
     flex:1,
     backgroundColor: '#ffffff'
   },
+  button: {
+    position:'absolute',
+    right: 40,
+    bottom: 80
+  }
 })
 
 export default List
