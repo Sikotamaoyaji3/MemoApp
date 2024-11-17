@@ -7,12 +7,12 @@ import { Feather } from "@expo/vector-icons";
 import Header from '../../components/Header'
 import CircleButton from '../../components/CircleButton'
 
-const Edit = ():JSX.Element => {
+const Create = ():JSX.Element => {
     return(
         <KeyboardAvoidingView behavior='height' style={styles.container}>
             <Header/>
             <ScrollView style={styles.inputContainer}>
-                <TextInput multiline style={styles.input} value={'買い物\nリスト'} />
+                <TextInput multiline style={styles.input} value={''} />
             </ScrollView>
             <CircleButton>
                 <Feather name='check' size={40} color='#ffffff' />
@@ -41,4 +41,4 @@ const styles = StyleSheet.create({
     }
 })
 
-export default Edit
+export default Create

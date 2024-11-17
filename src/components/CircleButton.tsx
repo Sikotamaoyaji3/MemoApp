@@ -9,10 +9,10 @@ interface Props {
     name?: string
 }
 const CircleButton = (props: Props): JSX.Element => {
-    const { children,style, } = props
+    const { children, style, name } = props
     return(
         <View style={[styles.circleButton, style]}>
-            <Feather  name='plus' style={[styles.circleButtonLabel, style]} />
+            <Feather  children style={[styles.circleButtonLabel, style]} />
         </View>
     )
 }

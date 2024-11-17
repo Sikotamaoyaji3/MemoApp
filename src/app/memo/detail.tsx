@@ -1,4 +1,4 @@
-import { View, Text, ScrollView, StyleSheet, Button } from 'react-native'
+import { View, Text, ScrollView, StyleSheet, } from 'react-native'
 import { Feather } from '@expo/vector-icons'
 
 import Header from '../../components/Header'
