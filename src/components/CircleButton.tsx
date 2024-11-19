@@ -15,7 +15,7 @@ const CircleButton = (props: Props): JSX.Element => {
     const { children, style } = props
     return(
         <TouchableOpacity style={[styles.circleButton, style]}>
-            <Text style={[styles.circleButtonLabel, style]}>{children}</Text>
+            <Feather name='plus' size={40} color={'#ffffff'}/>
         </TouchableOpacity>
     )
 }
@@ -37,11 +37,7 @@ const styles = StyleSheet.create({
         shadowOffset: {width: 0, height: 8},
         elevation: 8
       },
-      circleButtonLabel: {
-        color: '#ffffff',
-        fontSize: 45,
-        lineHeight: 48,
-      }
+
 })
 
 export default CircleButton

@@ -1,5 +1,7 @@
-import { View, Text, StyleSheet } from 'react-native'
+import { View, Text,
+  TouchableOpacity, StyleSheet } from 'react-native'
 
+import { Feather } from '@expo/vector-icons'
 const MemoListItem = (): JSX.Element => {
     return(
         <View style={styles.memoListItem}>
@@ -7,9 +9,9 @@ const MemoListItem = (): JSX.Element => {
               <Text style={styles.memoListItemTitle}>買い物リスト</Text>
               <Text style={styles.memoListItemDate}>2024年11月6日</Text>
             </View>
-            <View>
-              <Text>X</Text>
-            </View>
+            <TouchableOpacity>
+              <Feather name='x-circle' size={20} color={'#B0B0B0'}/>
+            </TouchableOpacity>
         </View>
     )
 }
