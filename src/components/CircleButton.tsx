@@ -10,11 +10,12 @@ interface Props {
     style?: ViewStyle
     size?: string
     name?: string
+    onPress?: () => void
 }
 const CircleButton = (props: Props): JSX.Element => {
-    const { children, style } = props
+    const { children, style, onPress } = props
     return(
-        <TouchableOpacity style={[styles.circleButton, style]}>
+        <TouchableOpacity onPress={onPress} style={[styles.circleButton, style]}>
             <Feather name='plus' size={40} color={'#ffffff'}/>
         </TouchableOpacity>
     )
@@ -37,7 +38,11 @@ const styles = StyleSheet.create({
         shadowOffset: {width: 0, height: 8},
         elevation: 8
       },
-
+      circleButtonLabel: {
+        color: '#ffffff',
+        fontSize: 45,
+        lineHeight: 48,
+      }
 })
 
 export default CircleButton
