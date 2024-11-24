@@ -1,9 +1,14 @@
+import { router } from "expo-router";
 import { TouchableOpacity, Text, StyleSheet } from "react-native";
 
+
+const handlePress = (): void => {
+    router.push('/auth/sign_up')
+}
 const LogOutButton = (): JSX.Element => {
     return (
         <TouchableOpacity>
-            <Text style={styles.text}>ログアウト</Text>
+            <Text style={styles.text} >ログアウト</Text>
         </TouchableOpacity>
     )
 }

@@ -2,7 +2,7 @@ import { View, Text, TextInput,
     TouchableOpacity, StyleSheet } from 'react-native'
 
 import { Link, router } from 'expo-router'
-
+import { useState } from 'react'
 
 import Button from '../../components/button'
 
@@ -12,13 +12,31 @@ const handlePress = (): void => {
     router.push('/memo/list')
 }
 const SignUp = (): JSX.Element => {
+    const [email, setEmail] = useState('')
+    const [password, setPassword] = useState('')
     return(
         <View style={styles.container}>
 
             <View style= {styles.textContainer}>
                 <Text style= {styles.title}>Sign Up</Text>
-                <TextInput style= {styles.textInput} value='Email Address'/>
-                <TextInput style= {styles.textInput} value='Password' />
+                <TextInput
+                style= {styles.textInput}
+                value={email}
+                onChangeText={(text) => {setEmail(text)}}
+                autoCapitalize='none'
+                keyboardType='email-address'
+                placeholder='Email Address'
+                textContentType='emailAddress'
+                />
+                <TextInput
+                style= {styles.textInput}
+                value={password}
+                onChangeText={(text) => {setPassword(text)}}//入力をリアルタイムで検知(関数発動)、取得する//
+                autoCapitalize='none'//先頭文字を小文字にする//
+                secureTextEntry//打ち込んだテキストを非表示にする//
+                placeholder='Password'//valueを薄く表示する//
+                textContentType='password'
+                />
                 <Button label='submit' onPress={handlePress}/>
                 <View style = {styles.footer}>
                     <Text style = {styles.footerText}>Already registered?</Text>
