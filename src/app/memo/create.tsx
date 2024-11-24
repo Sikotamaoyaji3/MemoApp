@@ -3,18 +3,38 @@ import {
 } from 'react-native'
 import { Feather } from "@expo/vector-icons";
 import { router } from 'expo-router'
+import { collection, addDoc } from 'firebase/firestore'
 
 
 
 import CircleButton from '../../components/CircleButton'
+import { db } from '../../config'
 
 const handlePress = (): void => {
-    router.back()
+    addDoc(collection(db, 'memos'), {
+        bodyText: 'testtinko'
+})
+        .then((docRef) => {
+            console.log('success', docRef.id)
+            router.back()
+        })
+        .catch((error) => {
+            console.log(error)
+        })
+//  await addDoc(collection(db, 'memos'), {
+//     bodyText: 'test wakaranasugiru'
+//  })
+//     .catch((error) => {
+//         console.log(error)
+//     })
+//  router.back()
 }
+
+
+
 const Create = ():JSX.Element => {
     return(
         <KeyboardAvoidingView behavior='height' style={styles.container}>
-
             <ScrollView style={styles.inputContainer}>
                 <TextInput multiline style={styles.input} value={''} />
             </ScrollView>
